@@ -7,15 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.stark.battery.BatteryActivity;
 import com.stark.bluetooth.Bluetooth;
 import com.stark.camera.CameraActivity;
+import com.stark.screen.ScreenActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final static String TAG = "Stark";
     private Button btBtn;
     private Button cameraBtn;
-
+    private Button batteryBtn;
+    private Button screenBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btBtn.setOnClickListener(this);
         cameraBtn = findViewById(R.id.camera);
         cameraBtn.setOnClickListener(this);
+        batteryBtn = findViewById(R.id.battery);
+        batteryBtn.setOnClickListener(this);
+        screenBtn = findViewById(R.id.screen);
+        screenBtn.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +46,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG,"camera");
                 Intent cameraIntent = new Intent(this, CameraActivity.class);
                 startActivity(cameraIntent);
+                break;
+            case R.id.battery:
+                Log.d(TAG,"battery");
+                Intent batteryIntent = new Intent(this, BatteryActivity.class);
+                startActivity(batteryIntent);
+                break;
+            case R.id.screen:
+                Log.d(TAG,"battery");
+                Intent screenIntent = new Intent(this, ScreenActivity.class);
+                startActivity(screenIntent);
                 break;
         }
     }

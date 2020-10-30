@@ -5,8 +5,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 启用应用启动设备发现或者操作蓝牙设备的超级管理员 -->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USES_POLICY_FORCE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".camera.CameraActivity"></activity>
+        <activity android:name=".screen.ScreenActivity"></activity>
+        <activity android:name=".battery.BatteryActivity" />
+        <activity android:name=".camera.CameraActivity" />
         <activity android:name=".bluetooth.RFCOMM" />
         <activity android:name=".bluetooth.Bluetooth" />
         <activity android:name=".MainActivity">

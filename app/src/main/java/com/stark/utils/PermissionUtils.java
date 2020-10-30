@@ -23,6 +23,22 @@ public class PermissionUtils {
 
     }
 
+    public static void verifyScreenLockPermissions(Activity activity) {
+        String[] PERMISSIONS_STORAGE = {
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        int permission = ActivityCompat.checkSelfPermission(activity,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE);
+        }
+
+    }
+
+
+
     public static void verifyBluetoothPermissions(Activity activity){
         String[] PERMISSIONS_STORAGE = {
                 Manifest.permission.BLUETOOTH,
