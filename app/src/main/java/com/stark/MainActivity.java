@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.stark.battery.BatteryActivity;
 import com.stark.bluetooth.Bluetooth;
 import com.stark.camera.CameraActivity;
+import com.stark.key.KeyActivity;
 import com.stark.screen.ScreenActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button cameraBtn;
     private Button batteryBtn;
     private Button screenBtn;
+    private Button keyBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         batteryBtn.setOnClickListener(this);
         screenBtn = findViewById(R.id.screen);
         screenBtn.setOnClickListener(this);
+        keyBtn = findViewById(R.id.key);
+        keyBtn.setOnClickListener(this);
     }
 
     @Override
@@ -56,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG,"battery");
                 Intent screenIntent = new Intent(this, ScreenActivity.class);
                 startActivity(screenIntent);
+                break;
+            case R.id.key:
+                Log.d(TAG,"battery");
+                Intent keyIntent = new Intent(this, KeyActivity.class);
+                startActivity(keyIntent);
                 break;
         }
     }
