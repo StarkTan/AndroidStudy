@@ -16,7 +16,7 @@ public class PowerKeyObserver {
 
     //注册广播接收者
     public void startListen(){
-        mIntentFilter=new IntentFilter(Intent.ACTION_SCREEN_OFF);
+        mIntentFilter=new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         mPowerKeyBroadcastReceiver=new PowerKeyBroadcastReceiver();
         mContext.registerReceiver(mPowerKeyBroadcastReceiver, mIntentFilter);
         System.out.println("----> 开始监听");
@@ -45,10 +45,10 @@ public class PowerKeyObserver {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(Intent.ACTION_SCREEN_OFF)) {
+            if (action.equals(Intent.ACTION_CLOSE_SYSTEM_DIALOGS) &&
+                    "dream".equals(intent.getStringExtra( "reason" ))) {
                 mOnPowerKeyListener.onPowerKeyPressed();
             }
         }
     }
-
 }
