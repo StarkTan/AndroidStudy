@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.stark.battery.BatteryActivity;
 import com.stark.bluetooth.Bluetooth;
 import com.stark.camera.CameraActivity;
+import com.stark.file.FileActivity;
 import com.stark.key.KeyActivity;
 import com.stark.screen.ScreenActivity;
 import com.stark.sensor.SensorActivity;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button screenBtn;
     private Button keyBtn;
     private Button sensorBtn;
-
+    private Button fileBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         keyBtn.setOnClickListener(this);
         sensorBtn = findViewById(R.id.sensor);
         sensorBtn.setOnClickListener(this);
+        fileBtn = findViewById(R.id.file);
+        fileBtn.setOnClickListener(this);
     }
 
     @Override
@@ -74,6 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG,"sensor");
                 Intent sensorIntent = new Intent(this, SensorActivity.class);
                 startActivity(sensorIntent);
+            case R.id.file:
+                Log.d(TAG,"file");
+                Intent fileIntent = new Intent(this, FileActivity.class);
+                startActivity(fileIntent);
         }
     }
 
