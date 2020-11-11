@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sensor.GSensorActivity">
+
+    <TextView
+        android:id="@+id/gsensor_angle_data"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="288dp"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_angle_lable"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="288dp"
+        android:text="Angle:"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_a_data"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="220dp"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_a_lable"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="220dp"
+        android:text="ALL:"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_y_data"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="112dp"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_z_data"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="160dp"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_x_data"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="64dp"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_x_lable"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
+        android:text="X:"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_y_lable"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="112dp"
+        android:text="Y:"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gsensor_z_lable"
+        android:layout_width="81dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="160dp"
+        android:text="Z:"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

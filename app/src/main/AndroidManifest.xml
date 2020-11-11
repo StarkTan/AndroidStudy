@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".key.KeyActivity"></activity>
+        <activity android:name=".sensor.GSensorActivity"></activity>
+        <activity android:name=".sensor.SensorActivity" />
+        <activity android:name=".key.KeyActivity" />
         <activity android:name=".screen.ScreenActivity" />
         <activity android:name=".battery.BatteryActivity" />
         <activity android:name=".camera.CameraActivity" />

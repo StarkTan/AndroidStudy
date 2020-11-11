@@ -12,6 +12,7 @@ import com.stark.bluetooth.Bluetooth;
 import com.stark.camera.CameraActivity;
 import com.stark.key.KeyActivity;
 import com.stark.screen.ScreenActivity;
+import com.stark.sensor.SensorActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button batteryBtn;
     private Button screenBtn;
     private Button keyBtn;
+    private Button sensorBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         screenBtn.setOnClickListener(this);
         keyBtn = findViewById(R.id.key);
         keyBtn.setOnClickListener(this);
+        sensorBtn = findViewById(R.id.sensor);
+        sensorBtn.setOnClickListener(this);
     }
 
     @Override
@@ -57,15 +61,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(batteryIntent);
                 break;
             case R.id.screen:
-                Log.d(TAG,"battery");
+                Log.d(TAG,"screen");
                 Intent screenIntent = new Intent(this, ScreenActivity.class);
                 startActivity(screenIntent);
                 break;
             case R.id.key:
-                Log.d(TAG,"battery");
+                Log.d(TAG,"key");
                 Intent keyIntent = new Intent(this, KeyActivity.class);
                 startActivity(keyIntent);
                 break;
+            case R.id.sensor:
+                Log.d(TAG,"sensor");
+                Intent sensorIntent = new Intent(this, SensorActivity.class);
+                startActivity(sensorIntent);
         }
     }
 
