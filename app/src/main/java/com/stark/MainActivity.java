@@ -14,6 +14,7 @@ import com.stark.file.FileActivity;
 import com.stark.key.KeyActivity;
 import com.stark.screen.ScreenActivity;
 import com.stark.sensor.SensorActivity;
+import com.stark.ui.UIComponentActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button keyBtn;
     private Button sensorBtn;
     private Button fileBtn;
+    private Button uiBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sensorBtn.setOnClickListener(this);
         fileBtn = findViewById(R.id.file);
         fileBtn.setOnClickListener(this);
+        uiBtn = findViewById(R.id.ui);
+        uiBtn.setOnClickListener(this);
     }
 
     @Override
@@ -81,8 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG,"file");
                 Intent fileIntent = new Intent(this, FileActivity.class);
                 startActivity(fileIntent);
+            case R.id.ui:
+                Log.d(TAG,"ui");
+                Intent uiIntent = new Intent(this, UIComponentActivity.class);
+                startActivity(uiIntent);
         }
     }
-
-
 }
