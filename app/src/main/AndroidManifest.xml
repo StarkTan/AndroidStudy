@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DialogActivity"></activity>
+        <activity android:name=".devicetool.ToolsActivity"></activity>
+        <activity android:name=".ui.DialogActivity" />
         <activity android:name=".ui.UIComponentActivity" />
         <activity android:name=".file.FileActivity" />
         <activity android:name=".sensor.GSensorActivity" />

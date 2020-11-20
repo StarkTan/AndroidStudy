@@ -61,7 +61,7 @@ public class PermissionUtils {
 
     public static void verifyCameraPermissions(Activity activity){
         String[] PERMISSIONS_STORAGE = {
-                Manifest.permission.CAMERA,
+                Manifest.permission.CAMERA
                 };
         boolean permissionOK = true;
         for(String permission:PERMISSIONS_STORAGE){

@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.stark.battery.BatteryActivity;
 import com.stark.bluetooth.Bluetooth;
 import com.stark.camera.CameraActivity;
+import com.stark.devicetool.ToolsActivity;
 import com.stark.file.FileActivity;
 import com.stark.key.KeyActivity;
 import com.stark.screen.ScreenActivity;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button sensorBtn;
     private Button fileBtn;
     private Button uiBtn;
+    private Button toolsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fileBtn.setOnClickListener(this);
         uiBtn = findViewById(R.id.ui);
         uiBtn.setOnClickListener(this);
+        toolsBtn = findViewById(R.id.tools);
+        toolsBtn.setOnClickListener(this);
     }
 
     @Override
@@ -90,6 +94,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG,"ui");
                 Intent uiIntent = new Intent(this, UIComponentActivity.class);
                 startActivity(uiIntent);
+            case R.id.tools:
+                Log.d(TAG,"tools");
+                Intent toolsIntent = new Intent(this, ToolsActivity.class);
+                startActivity(toolsIntent);
+                break;
         }
     }
 }
