@@ -16,8 +16,10 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 
     private Button waitBtn;
     private Button toastBtn;
+    private Button progressBtn;
 
     private WaitDialog waitDialog;
+    private ProgressDialog progressDialog;
 
     private Handler mHandler;
 
@@ -30,6 +32,8 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         waitBtn.setOnClickListener(this);
         toastBtn = findViewById(R.id.toast_btn);
         toastBtn.setOnClickListener(this);
+        progressBtn = findViewById(R.id.progress_btn);
+        progressBtn.setOnClickListener(this);
 
         mHandler = new MyHandler();
     }
@@ -59,6 +63,32 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.toast_btn:
                 Toast.makeText(DialogActivity.this,"Toast messgae",Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.progress_btn:
+                progressDialog = new ProgressDialog(this);
+                progressDialog.setTitle("下载进度");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.setMax(100);
+                progressDialog.setProgress(0);
+                new Thread(){
+                    @Override
+                    public void run() {
+                        super.run();
+                        try {
+                            for(int i=0;i<=10;i++){
+                                Thread.sleep(1000);
+                                mHandler.sendEmptyMessage(1);
+                                Message message = new Message();
+                                message.what = 2;
+                                message.arg1 = i*10;
+                                mHandler.sendMessage(message);
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+                progressDialog.show();
+                break;
             default:
                 break;
         }
@@ -72,6 +102,11 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 case 1:
                     waitDialog.setText("wait for 5s");
                     break;
+                case 2:
+                    progressDialog.setProgress(msg.arg1);
+                    if(msg.arg1==100){
+                        progressDialog.dismiss();
+                    }
                 default:
                     break;
             }
