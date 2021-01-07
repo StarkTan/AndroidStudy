@@ -86,14 +86,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG,"sensor");
                 Intent sensorIntent = new Intent(this, SensorActivity.class);
                 startActivity(sensorIntent);
+                break;
             case R.id.file:
                 Log.d(TAG,"file");
                 Intent fileIntent = new Intent(this, FileActivity.class);
                 startActivity(fileIntent);
+                break;
             case R.id.ui:
                 Log.d(TAG,"ui");
                 Intent uiIntent = new Intent(this, UIComponentActivity.class);
                 startActivity(uiIntent);
+                break;
             case R.id.tools:
                 Log.d(TAG,"tools");
                 Intent toolsIntent = new Intent(this, ToolsActivity.class);

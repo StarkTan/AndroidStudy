@@ -1,7 +1,9 @@
 package com.stark.ui;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -17,11 +19,13 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
     private Button waitBtn;
     private Button toastBtn;
     private Button progressBtn;
+    private Button confirmBtn;
 
     private WaitDialog waitDialog;
     private ProgressDialog progressDialog;
 
     private Handler mHandler;
+    private AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +38,10 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         toastBtn.setOnClickListener(this);
         progressBtn = findViewById(R.id.progress_btn);
         progressBtn.setOnClickListener(this);
-
+        confirmBtn = findViewById(R.id.confirm_btn);
+        confirmBtn.setOnClickListener(this);
         mHandler = new MyHandler();
+
     }
 
     @Override
@@ -89,6 +95,24 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 }.start();
                 progressDialog.show();
                 break;
+            case R.id.confirm_btn:
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage("确认返回上一页？");
+                builder.setTitle("确认");
+                builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DialogActivity.this.finish();
+                    }
+                });
+                builder.setNegativeButton("否", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(DialogActivity.this,"取消",Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
             default:
                 break;
         }

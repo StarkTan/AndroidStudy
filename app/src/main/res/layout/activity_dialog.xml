@@ -7,6 +7,16 @@
     tools:context=".ui.DialogActivity">
 
     <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="112dp"
+        android:text="Confirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/wait_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

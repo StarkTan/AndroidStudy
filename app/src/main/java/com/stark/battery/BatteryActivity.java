@@ -28,7 +28,6 @@ public class BatteryActivity extends AppCompatActivity {
 
     private BroadcastReceiver batteryReceiver;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,5 +132,4 @@ public class BatteryActivity extends AppCompatActivity {
             batteryTechTV.setText(technology);
         }
     };
-
 }
